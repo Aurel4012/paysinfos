@@ -24,7 +24,10 @@ class SearchRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+           'name' => 'bail',
+           'capital' => 'bail',
+           'region' => 'bail',
+           'currencies' => 'bail'
         ];
     }
 }
