@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\SearchRequest;
 
 class HomeController extends Controller{
-
-    public function index(SearchRequest $request){
+    public function  index(){
+      return view('home');
+    }
+    public function search(SearchRequest $request){
     	$curl = curl_init();
       $tag =$request->tag;
       $search = $request->search;
