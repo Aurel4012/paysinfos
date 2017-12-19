@@ -21,18 +21,19 @@
 				<div class="col-md-10">
 					
 					<h1 class="text-center">PaysInfos</h1>
+					<form method="POST" action="/">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<select name="tag" class="mx-auto mt-3">
+							<option value="name">Pays</option>
+							<option value="capital">Capitale</option>
+							<option value="region">Région</option>
+							<option value="currencies">Monnaies</option>
+						</select>
 
-					<select name="tag" class="mx-auto mt-3">
-						<option value="name">Pays</option>
-						<option value="capital">Capitale</option>
-						<option value="region">Région</option>
-						<option value="currencies">Monnaies</option>
-					</select>
+						<input name="search" type="text" class="mx-auto">
 
-					<input name="search" type="text" class="mx-auto">
-
-					<button class="btn btn-success mt-5" type="submit">Envoyez !</button>
-
+						<button class="btn btn-success mt-5" type="submit">Envoyez !</button>
+					</form>
 				</div>
 
 			</div>

@@ -11,4 +11,4 @@
 |
 */
 Route::get('/','HomeController@index')->name('home');
-Route::post('/','HomeController@index');
+Route::post('/','HomeController@search');
