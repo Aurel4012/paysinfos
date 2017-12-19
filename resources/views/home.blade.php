@@ -22,7 +22,7 @@
 					
 					<h1 class="text-center">PaysInfos</h1>
 
-					<select name="tag" class="mx-auto">
+					<select name="tag" class="mx-auto mt-3">
 						<option value="name">Pays</option>
 						<option value="capital">Capitale</option>
 						<option value="region">Région</option>
@@ -30,6 +30,8 @@
 					</select>
 
 					<input name="search" type="text" class="mx-auto">
+
+					<button class="btn btn-success mt-5" type="submit">Envoyez !</button>
 
 				</div>
 
