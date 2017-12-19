@@ -11,10 +11,10 @@ class HomeController extends Controller{
     }
     public function search(SearchRequest $request){
     	$curl = curl_init();
-      $tag =$request->tag;
+      $tag = $request->tag;
       $search = $request->search;
       curl_setopt_array($curl, array(
-      CURLOPT_URL => "http://restcountries.eu/rest/v2/$tag/$search",
+      CURLOPT_URL => "http://restcountries.eu/rest/v2/".$tag."/".$search,
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_TIMEOUT => 30,
       CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
@@ -29,7 +29,6 @@ $err = curl_error($curl);
 
 curl_close($curl);
 $response = json_decode($response, true); //because of true, it's in an array
-
-        return view('resultat',compact($response));
+        return view('resultat',compact('response'));
     }
 }
