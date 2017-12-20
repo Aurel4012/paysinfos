@@ -19,6 +19,11 @@ body
   justify-content: center;
 }
 
+main
+{
+  padding: 2% 0;
+}
+
 article
 {
   color: #fff;
@@ -49,6 +54,11 @@ article span
 .other-search select:hover
 {
   cursor: pointer;
+}
+
+.other-search input
+{
+  color: #fff;
 }
 
 

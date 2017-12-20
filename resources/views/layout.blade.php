@@ -16,9 +16,9 @@
         @section('sidebar')
         @show
 
-        <div>
+        <main>
             @yield('content')
-        </div>
+        </main>
     
               
     </body>
