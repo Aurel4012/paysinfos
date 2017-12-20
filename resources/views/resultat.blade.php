@@ -8,6 +8,28 @@
 
          <div class="row text-center vertical-center">
 
+            <div class="col-md-10 text-center other-search">
+
+              <h2>Une autre recherche ?</h2>
+
+              <form method="POST" action="{{url('/result')}}">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                
+
+                <select name="tag" class="mdb-select mx-auto mt-3">
+                    <option value="name">Pays</option>
+                    <option value="capital">Capitale</option>
+                    <option value="region">Région</option>
+                </select>
+                    
+
+                <input placeholder="Recherche en Anglais" name="search" type="text" class="mx-auto">
+
+                <button class="btn btn-success mt-5" type="submit">Recherchez</button>
+              </form>
+
+            </div>
+
            <div class="col-md-6">
              
               <article>
@@ -17,65 +39,52 @@
                 <span>Population: {{ $value['population'] }}</span><br>
                 <span>Continent: {{ $value['region'] }}</span><br>
                 <span>Monnaie: {{ $value['currencies'][0]['name'] }}</span><br>
+                <span>Code Monnaie: {{ $value['currencies'][0]['code'] }}</span><br>
                 <span>Indicatif téléphonique: +{{ $value['callingCodes'][0] }}</span><br>
                 <span>Langue: {{ $value['languages'][0]['nativeName'] }}</span><br>
                 <span>Latitude: {{ $value['latlng'][0] }}</span><br>
                 <span>Longitude: {{ $value['latlng'][1] }}</span><br>
 
                 <div class="text-center mx-auto">
-                @if (count($response) === 1)
 
-                   @foreach($response as $key => $value)
+                  @if (count($response) === 1)
 
-                     <a target="_blank" href="https://www.google.fr/maps/place/{{$value['name']}}"> 
+                     @foreach($response as $key => $value)
 
-                        <div data-lat="{{$value['latlng'][0] }}" data-long="{{$value['latlng'][1] }}" id="map" style="height: 200px; width: 100%; ">MAP</div>
+                       <a target="_blank" href="https://www.google.fr/maps/place/{{$value['name']}}"> 
 
-                        <script async defer src="js/map.js"></script>
+                          <div data-lat="{{$value['latlng'][0] }}" data-long="{{$value['latlng'][1] }}" id="map" style="height: 200px; width: 100%; ">MAP</div>
 
-                        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFJQ1tXrOUzskfwG8pEj5EXvvrX-w08SU&callback=initMap">
-                         </script>
+                          <script async defer src="js/map.js"></script>
 
-                     </a>
+                          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFJQ1tXrOUzskfwG8pEj5EXvvrX-w08SU&callback=initMap">
+                           </script>
 
-                   @endforeach
-                   <span>Temps de {{ $temps['name'] }}</span>
-                   <span>{{ $temps['weather'][0]['description'] }}</span>
-                   <span>Température: {{ $temps['main']['temp'] }}</span>
-                   <span>Humidité: {{ $temps['main']['humidity'] }}</span>
-                   <span>Vitesse du vent: {{ $temps['wind']['speed'] }}</span>
-                @endif
+                       </a>
+
+                     @endforeach
+
+                  @endif
               </div>
 
               </article>
 
            </div>
            
-          <div class="col-md-10 text-center other-search">
-
-            <h2>Une autre recherche ?</h2>
-
-            <form method="POST" action="{{url('/result')}}">
-              <input type="hidden" name="_token" value="{{ csrf_token() }}">
+           {{-- <div class="col-md-6" style="background-image: url({{url('img/'.str_replace("é","e",$temps['weather'][0]['description'].'.jpg'))}})!important;"> --}}
+            <div class="col-md-6">
               
+             <span>Temps actuel à {{ $temps['name'] }}</span><br>
+             <span>État du ciel : {{ str_replace("é","e",$temps['weather'][0]['description']) }}</span><br>
+             <span>Température : {{ $temps['main']['temp'] }}°</span><br>
+             <span>Humidité : {{ $temps['main']['humidity'] }}</span><br>
+             <span>Vitesse du vent : {{ $temps['wind']['speed'] }}</span><br>
 
-              <select name="tag" class="mdb-select mx-auto mt-3">
-                  <option value="name">Pays</option>
-                  <option value="capital">Capitale</option>
-                  <option value="region">Région</option>
-              </select>
-                  
+           </div>
 
-              <input placeholder="Recherche en Anglais" name="search" type="text" class="mx-auto">
+         </div><!--ROW-->
 
-              <button class="btn btn-success mt-5" type="submit">Recherchez</button>
-            </form>
-
-          </div>
-
-         </div>
-
-      </div>
+      </div><!--container-fluid-->
 
   @endforeach
 
