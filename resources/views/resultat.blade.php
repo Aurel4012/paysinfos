@@ -37,9 +37,9 @@
                 <span>Pays: {{ $value['name'] }}</span><br>
                 <span>Capitale: {{ $value['capital'] }}</span><br>
                 <span>Population: {{ $value['population'] }}</span><br>
+                <span>Surface: {{ $value['area'] }} km²</span><br>
                 <span>Continent: {{ $value['region'] }}</span><br>
                 <span>Monnaie: {{ $value['currencies'][0]['name'] }}</span><br>
-                <span>Code Monnaie: {{ $value['currencies'][0]['code'] }}</span><br>
                 <span>Indicatif téléphonique: +{{ $value['callingCodes'][0] }}</span><br>
                 <span>Langue: {{ $value['languages'][0]['nativeName'] }}</span><br>
                 <span>Latitude: {{ $value['latlng'][0] }}</span><br>
@@ -70,7 +70,10 @@
               </article>
 
            </div>
-           
+           <div>
+             <span>Cours de la monnaie {{ $code }} par rapport au dollars Américains:</span><br/>
+             <span>1$ = {{ $cours['quotes']['USD'.$code] }} {{ $symbol }}</span>
+           </div>
            {{-- <div class="col-md-6" style="background-image: url({{url('img/'.str_replace("é","e",$temps['weather'][0]['description'].'.jpg'))}})!important;"> --}}
             <div class="col-md-6">
               
