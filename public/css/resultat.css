@@ -26,7 +26,7 @@ article
   background: rgba(255,255,255,.3);
   border: 1px solid transparent;
   border-radius: 5px;
-  padding: 4% 0;
+  padding: 4% 0 0 0;
 }
 
 article h1
@@ -41,8 +41,13 @@ article span
   border-radius: 5px;
 }
 
+#map
+{
+  margin-top: 4%;
+}
 
-/*@media screen and (min-width: 721px) and (max-width: 1024px){
+
+@media screen and (min-width: 721px) and (max-width: 1024px){
   
   article h1
   {
@@ -54,7 +59,7 @@ article span
     font-size: 1.2rem;
   }
 
-}*/
+}
 
 
 @media screen and (max-width: 720px){

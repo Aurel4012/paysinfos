@@ -21,6 +21,20 @@
                 <span>Langue: {{ $value['languages'][0]['nativeName'] }}</span><br>
                 <span>Latitude: {{ $value['latlng'][0] }}</span><br>
                 <span>Longitude: {{ $value['latlng'][1] }}</span><br>
+
+                <div class="text-center mx-auto">
+                @if (count($response) === 1)
+
+                   @foreach($response as $key => $value)
+                                <div data-lat="{{$value['latlng'][0] }}" data-long="{{$value['latlng'][1] }}" id="map" style="height: 200px; width: 100%; ">MAP</div> <script async defer src="js/map.js"></script>
+
+                          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFJQ1tXrOUzskfwG8pEj5EXvvrX-w08SU&callback=initMap">
+                           </script>
+                   @endforeach
+                          
+                @endif
+              </div>
+
               </article>
 
            </div>
@@ -28,15 +42,7 @@
          </div>
 
       </div>
+
   @endforeach
-   @if (count($response) === 1)
-     @foreach($response as $key => $value)
-                  <div data-lat="{{$value['latlng'][0] }}" data-long="{{$value['latlng'][1] }}" id="map" style="height: 200px; width: 300px; ">test</div> <script async defer src="js/map.js"></script>
 
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFJQ1tXrOUzskfwG8pEj5EXvvrX-w08SU&callback=initMap">
-             </script>
-                        @endforeach
-
-            
-            @endif
 @endsection
