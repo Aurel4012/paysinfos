@@ -10,5 +10,5 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/','HomeController@index')->name('home');
-Route::post('/','HomeController@search');
+Route::get('/','AurelHomeController@index')->name('home');
+Route::post('/result','AurelHomeController@search');

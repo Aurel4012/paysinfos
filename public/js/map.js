@@ -1,7 +1,9 @@
 function initMap() {
-  var longitude = $(this).attr('data-long');
-  var latitude = $(this).attr('data-lat');
-  var uluru = {lat: 46.115909, lng: 3.435792};
+ var longitude = $('#map').attr('data-long');
+var latitude = $('#map').attr('data-lat');
+
+  var uluru = {lat: parseInt(latitude), lng: parseInt(longitude)};
+console.log(uluru);
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 15,
     center: uluru

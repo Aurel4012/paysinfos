@@ -21,7 +21,7 @@
 				<div class="col-md-10">
 					
 					<h1 class="text-center">PaysInfos</h1>
-					<form method="POST" action="/">
+					<form method="POST" action="{{url('/result')}}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<select name="tag" class="mx-auto mt-3">
 							<option value="name">Pays</option>

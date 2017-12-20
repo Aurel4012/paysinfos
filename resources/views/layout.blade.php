@@ -8,6 +8,8 @@
         <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="mdb.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     </head>
     <body>
         @section('sidebar')
@@ -16,5 +18,7 @@
         <div>
             @yield('content')
         </div>
+    
+              
     </body>
 </html>
