@@ -61,6 +61,21 @@ article span
   color: #fff;
 }
 
+/*Meteo*/
+
+
+/***********/
+
+/*Monnaie*/
+
+.monnaie
+{
+  margin-bottom: 2%;
+}
+
+
+/**********/
+
 
 @media screen and (min-width: 721px) and (max-width: 1024px){
   

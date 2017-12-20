@@ -2,8 +2,6 @@
 @section('title', 'Résultat')
 @section('content')
 
-       @foreach($response as $key => $value)
-
       <div class="container-fluid">
 
          <div class="row text-center vertical-center">
@@ -29,6 +27,12 @@
               </form>
 
             </div>
+
+        </div><!--ROW-->
+
+        @foreach($response as $key => $value)
+
+          <div class="row text-center vertical-center">
 
            <div class="col-md-6">
              
@@ -70,22 +74,29 @@
               </article>
 
            </div>
-           <div>
+
+           {{-- <div class="col-md-6" style="background-image: url({{url('img/'.str_replace("é","e",$temps['weather'][0]['description'].'.jpg'))}})!important;"> --}}
+
+            <div class="col-md-6 monnaie">
+
              <span>Cours de la monnaie {{ $code }} par rapport au dollars Américains:</span><br/>
              <span>1$ = {{ $cours['quotes']['USD'.$code] }} {{ $symbol }}</span>
-           </div>
-           {{-- <div class="col-md-6" style="background-image: url({{url('img/'.str_replace("é","e",$temps['weather'][0]['description'].'.jpg'))}})!important;"> --}}
-            <div class="col-md-6">
-              
-             <span>Temps actuel à {{ $temps['name'] }}</span><br>
-             <span>État du ciel : {{ str_replace("é","e",$temps['weather'][0]['description']) }}</span><br>
-             <span>Température : {{ $temps['main']['temp'] }}°</span><br>
-             <span>Humidité : {{ $temps['main']['humidity'] }}</span><br>
-             <span>Vitesse du vent : {{ $temps['wind']['speed'] }}</span><br>
 
            </div>
 
-         </div><!--ROW-->
+        </div><!--row pays et monnaie-->
+
+         <div class="row text-center">
+
+             <div class="col-md-12 meteo">
+                <span>Temps actuel à {{ $temps['name'] }}</span><br>
+               <span>État du ciel : {{ str_replace("é","e",$temps['weather'][0]['description']) }}</span><br>
+               <span>Température : {{ $temps['main']['temp'] }}°</span><br>
+               <span>Humidité : {{ $temps['main']['humidity'] }}</span><br>
+               <span>Vitesse du vent : {{ $temps['wind']['speed'] }}</span><br>
+             </div>
+
+          </div>
 
       </div><!--container-fluid-->
 
