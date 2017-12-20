@@ -39,7 +39,7 @@
 
            </div>
            
-          <div class="col-md-10 text-center">
+          <div class="col-md-10 text-center other-search">
 
             <h2>Une autre recherche ?</h2>
 

@@ -46,17 +46,39 @@ article span
   margin-top: 4%;
 }
 
+.other-search select:hover
+{
+  cursor: pointer;
+}
+
 
 @media screen and (min-width: 721px) and (max-width: 1024px){
   
   article h1
   {
-    font-size: 1.7rem;
+    font-size: 2rem;
   }
 
   article
   {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+  }
+
+  .other-search h2
+  {
+    margin-top: 10%;
+    font-size: 2rem;
+  }
+
+  .other-search input
+  {
+    margin-top: 5%;
+    color: #fff;
+  }
+
+  .other-search button
+  {
+    font-size: 0.7rem;
   }
 
 }
@@ -66,10 +88,27 @@ article span
   
   article h1
   {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   article
+  {
+    font-size: 1rem;
+  }
+
+  .other-search h2
+  {
+    margin-top: 10%;
+    font-size: 1.5rem;
+  }
+
+  .other-search input
+  {
+    margin-top: 5%;
+    color: #fff;
+  }
+
+  .other-search button
   {
     font-size: 0.7rem;
   }

@@ -29,7 +29,50 @@ input,select
   display: block;
 }
 
+select:hover
+{
+  cursor: pointer;
+}
+
 input[type="date"], input[type="datetime-local"], input[type="email"], input[type="number"], input[type="password"], input[type="search-md"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], textarea.md-textarea
 {
   width: 50%;
+}
+
+@media screen and (max-width: 720px){
+
+  h1
+  {
+    font-size: 1.5rem;
+  }
+
+  select
+  {
+    margin-bottom: 5%;
+  }
+
+  input[type="text"],select,button[type="submit"]
+  {
+    font-size: 0.7rem;
+  }
+
+}
+
+@media screen and (min-width: 720px) and (max-width: 1024px){
+
+  h1
+  {
+    font-size: 2rem;
+  }
+
+  select
+  {
+    margin-bottom: 2%;
+  }
+
+  input[type="text"],select,button[type="submit"]
+  {
+    font-size: 1rem;
+  }
+
 }
