@@ -27,7 +27,6 @@
 							<option value="name">Pays</option>
 							<option value="capital">Capitale</option>
 							<option value="region">Région</option>
-							<option value="currencies">Monnaies</option>
 						</select>
 
 						<input name="search" type="text" class="mx-auto">
