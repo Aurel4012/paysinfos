@@ -29,4 +29,14 @@
 
       </div>
   @endforeach
+   @if (count($response) === 1)
+     @foreach($response as $key => $value)
+                  <div data-lat="{{$value['latlng'][0] }}" data-long="{{$value['latlng'][1] }}" id="map" style="height: 200px; width: 300px; ">test</div> <script async defer src="js/map.js"></script>
+
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFJQ1tXrOUzskfwG8pEj5EXvvrX-w08SU&callback=initMap">
+             </script>
+                        @endforeach
+
+            
+            @endif
 @endsection
