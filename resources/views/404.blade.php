@@ -16,7 +16,7 @@
 
 	<div class="container-fluid">
 		
-		<a id="exiterror" href="{{route('home')}}"><i class="fa fa-arrow-circle-o-left" aria-hidden="true">Retour à la page d'accueil</i>
+		<a id="exiterror" href="{{route('home')}}"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>Retour à la page d'accueil
 </a>
 
 		<div class="row text-center vertical-center">

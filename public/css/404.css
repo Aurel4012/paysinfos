@@ -32,6 +32,11 @@ img
   font-size: 1rem;
 }
 
+#exiterror i
+{
+  padding-right: 5px;
+}
+
 @media screen and (min-width: 720px) and (max-width: 1024px){
 
   h1
