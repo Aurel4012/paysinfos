@@ -31,7 +31,11 @@
                           <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFJQ1tXrOUzskfwG8pEj5EXvvrX-w08SU&callback=initMap">
                            </script>
                    @endforeach
-                          
+                   <span>Temps de {{ $temps['name'] }}</span>
+                   <span>{{ $temps['weather'][0]['description'] }}</span>
+                   <span>Température: {{ $temps['main']['temp'] }}</span>
+                   <span>Humidité: {{ $temps['main']['humidity'] }}</span>
+                   <span>Vitesse du vent: {{ $temps['wind']['speed'] }}</span>
                 @endif
               </div>
 
