@@ -26,10 +26,18 @@
                 @if (count($response) === 1)
 
                    @foreach($response as $key => $value)
-                                <div data-lat="{{$value['latlng'][0] }}" data-long="{{$value['latlng'][1] }}" id="map" style="height: 200px; width: 100%; ">MAP</div> <script async defer src="js/map.js"></script>
 
-                          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFJQ1tXrOUzskfwG8pEj5EXvvrX-w08SU&callback=initMap">
-                           </script>
+                     <a target="_blank" href="https://www.google.fr/maps/place/{{$value['name']}}"> 
+
+                        <div data-lat="{{$value['latlng'][0] }}" data-long="{{$value['latlng'][1] }}" id="map" style="height: 200px; width: 100%; ">MAP</div>
+
+                        <script async defer src="js/map.js"></script>
+
+                        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFJQ1tXrOUzskfwG8pEj5EXvvrX-w08SU&callback=initMap">
+                         </script>
+
+                     </a>
+
                    @endforeach
                    <span>Temps de {{ $temps['name'] }}</span>
                    <span>{{ $temps['weather'][0]['description'] }}</span>
