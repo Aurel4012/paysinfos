@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+body
+{
+    background: #fff; /**#1C1C1E**/
+/*    background: -webkit-linear-gradient(to right, #434343, #000000);
+    background: linear-gradient(to right, #434343, #000000);*/
+	color: #000;
+	font-family: 'Raleway';
+	max-width: 100%;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img
+{
+  max-width: 100%;
+}
+
+@media screen and (min-width: 720px) and (max-width: 1024px){
+
+  h1
+  {
+    font-size: 2rem;
+  }
+
+  h2
+  {
+    font-size: 1.5rem;
+  }
+
+}
+
+@media screen and (max-width: 720px){
+
+  h1
+  {
+    font-size: 1.5rem;
+  }
+
+  h2
+  {
+    font-size: 1rem;
+  }
+
+}

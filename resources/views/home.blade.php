@@ -34,7 +34,7 @@
 
 						<input placeholder="Recherche en Anglais" name="search" type="text" class="mx-auto">
 
-						<button class="btn btn-success mt-5" type="submit">Envoyez !</button>
+						<button class="btn btn-success mt-5" type="submit">Recherchez</button>
 					</form>
 				</div>
 

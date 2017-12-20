@@ -29,6 +29,12 @@ $err = curl_error($curl);
 
 curl_close($curl);
 $response = json_decode($response, true); //because of true, it's in an array
-        return view('resultat',compact('response','search'));
+
+        if (isset($response['status']) == 404) {
+          return view('404');
+        } else {
+          return view('resultat',compact('response','search'));
+        }
+
     }
 }
