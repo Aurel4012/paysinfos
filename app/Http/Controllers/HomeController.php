@@ -29,6 +29,6 @@ $err = curl_error($curl);
 
 curl_close($curl);
 $response = json_decode($response, true); //because of true, it's in an array
-        return view('resultat',compact('response'));
+        return view('resultat',compact('response','search'));
     }
 }
