@@ -4,32 +4,6 @@
 
       <div class="container-fluid">
 
-         <div class="row text-center vertical-center">
-
-            <div class="col-md-10 text-center other-search">
-
-              <h2>Une autre recherche ?</h2>
-
-              <form method="POST" action="{{url('/result')}}">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                
-
-                <select name="tag" class="mdb-select mx-auto mt-3">
-                    <option value="name">Pays</option>
-                    <option value="capital">Capitale</option>
-                    <option value="region">Région</option>
-                </select>
-                    
-
-                <input placeholder="Recherche en Anglais" name="search" type="text" class="mx-auto">
-
-                <button class="btn btn-success mt-5" type="submit">Recherchez</button>
-              </form>
-
-            </div>
-
-        </div><!--ROW-->
-
         @foreach($response as $key => $value)
 
           <div class="row text-center vertical-center">
@@ -77,26 +51,61 @@
 
            {{-- <div class="col-md-6" style="background-image: url({{url('img/'.str_replace("é","e",$temps['weather'][0]['description'].'.jpg'))}})!important;"> --}}
 
-            <div class="col-md-6 monnaie">
+             <div class="col-md-6 meteo">
 
-             <span>Cours de la monnaie {{ $code }} par rapport au dollars Américains:</span><br/>
-             <span>1$ = {{ $cours['quotes']['USD'.$code] }} {{ $symbol }}</span>
-
-           </div>
-
-        </div><!--row pays et monnaie-->
-
-         <div class="row text-center">
-
-             <div class="col-md-12 meteo">
+              <article>
                 <span>Temps actuel à {{ $temps['name'] }}</span><br>
                <span>État du ciel : {{ str_replace("é","e",$temps['weather'][0]['description']) }}</span><br>
                <span>Température : {{ $temps['main']['temp'] }}°</span><br>
                <span>Humidité : {{ $temps['main']['humidity'] }}</span><br>
                <span>Vitesse du vent : {{ $temps['wind']['speed'] }}</span><br>
+              </article>
+
              </div>
 
+
+        </div><!--row pays et monnaie-->
+
+         <div class="row text-center">
+
+          <div class="col-md-12 monnaie">
+
+            <article>
+
+             <span>Cours de la monnaie {{ $code }} par rapport au dollars Américains:</span><br/>
+             <span>1$ = {{ $cours['quotes']['USD'.$code] }} {{ $symbol }}</span>
+
+            </article>
+
+           </div>
+
           </div>
+
+          <div class="row text-center vertical-center">
+
+            <div class="col-md-10 text-center other-search">
+
+              <h2>Une autre recherche ?</h2>
+
+              <form method="POST" action="{{url('/result')}}">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                
+
+                <select name="tag" class="mdb-select mx-auto mt-3">
+                    <option value="name">Pays</option>
+                    <option value="capital">Capitale</option>
+                    <option value="region">Région</option>
+                </select>
+                    
+
+                <input placeholder="Recherche en Anglais" name="search" type="text" class="mx-auto">
+
+                <button class="btn btn-success mt-5" type="submit">Recherchez</button>
+              </form>
+
+            </div>
+
+        </div><!--ROW-->
 
       </div><!--container-fluid-->
 

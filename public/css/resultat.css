@@ -63,6 +63,10 @@ article span
 
 /*Meteo*/
 
+.meteo article
+{
+  padding: 4% 0;
+}
 
 /***********/
 
@@ -73,8 +77,22 @@ article span
   margin-bottom: 2%;
 }
 
+.monnaie article
+{
+  padding: 4% 0;
+}
+
 
 /**********/
+
+@media screen and (max-width: 720px){
+
+  .meteo article
+  {
+    margin: 5% 0;
+  }
+
+}
 
 
 @media screen and (min-width: 721px) and (max-width: 1024px){
@@ -104,6 +122,11 @@ article span
   .other-search button
   {
     font-size: 0.7rem;
+  }
+
+  .meteo article
+  {
+    margin: 5% 0;
   }
 
 }
