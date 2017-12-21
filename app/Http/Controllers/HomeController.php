@@ -29,6 +29,7 @@ $err = curl_error($curl);
 
 curl_close($curl);
 $response = json_decode($response, true); //because of true, it's in an array
+  public function  index(){
 
         if (isset($response['status']) == 404) {
           return view('404');
