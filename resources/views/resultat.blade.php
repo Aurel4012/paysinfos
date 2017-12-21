@@ -38,7 +38,7 @@
              
               <article>
                 <h1>Résultat de votre recherche "{{ $search }}"</h1>
-                <span>Pays: {{ $value['name'] }}</span><br>
+                 <span>Pays: {{ $value['name'] }} <img src="{{$value['flag']}}" alt="{{ $value['name']}}" height="20" width="35"></span><br>
                 <span>Capitale: {{ $value['capital'] }}</span><br>
                 <span>Population: {{ $value['population'] }}</span><br>
                 <span>Surface: {{ $value['area'] }} km²</span><br>
