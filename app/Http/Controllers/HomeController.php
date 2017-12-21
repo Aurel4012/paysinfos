@@ -38,23 +38,18 @@ class HomeController extends Controller{
       $search = $request->search;
        $response = Api("restcountries.eu/rest/v2/".$tag."/".$search);//appel sans http      
      
-
+        // dd($response[0]['currencies'][0]['code']);
         if (isset($response['status']) == 404) {
           return view('404');
         } else {
           if(count($response) === 1){
           //temps
-
-          foreach ($response as $value) {
-          $temps = Api("api.openweathermap.org/data/2.5/weather?q=".$value['capital']."&lang=fr&units=metric&appid=1f8c14072d202a541d6d06d2415fb1f9");//appel sans http   
-          } 
+            $temps = Api("api.openweathermap.org/data/2.5/weather?q=".$response[0]['capital']."&lang=fr&units=metric&appid=1f8c14072d202a541d6d06d2415fb1f9");//appel sans http   
           //fin temps
           // Cours monnaie
-          foreach ($response as $value) {
-            $cours = Api("www.apilayer.net/api/live?access_key=f57cdf80296d847b96a54feb55a0830e&currencies=EUR,".$value['currencies'][0]['code'].",CAD,PLN,USD&format=1");//appel sans http 
-          }
-          $code = $value['currencies'][0]['code'];// recup code monaie
-          $symbol = $value['currencies'][0]['symbol'];//recup symbol monaie
+            $cours = Api("www.apilayer.net/api/live?access_key=f57cdf80296d847b96a54feb55a0830e&currencies=EUR,".$response[0]['currencies'][0]['code'].",CAD,PLN,USD&format=1");//appel sans http 
+          $code = $response[0]['currencies'][0]['code'];// recup code monaie
+          $symbol = $response[0]['currencies'][0]['symbol'];//recup symbol monaie
           }
                }
           return view('resultat',compact('response','search','temps','cours','code','symbol'));
