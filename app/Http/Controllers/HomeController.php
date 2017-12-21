@@ -53,7 +53,5 @@ class HomeController extends Controller{
           }
                }
           return view('resultat',compact('response','search','temps','cours','code','symbol'));
-       
-
     }// fin function search
 }
