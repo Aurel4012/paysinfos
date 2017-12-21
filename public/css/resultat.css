@@ -18,7 +18,15 @@ body
   align-items: center;
   justify-content: center;
 }
-
+nav{
+  position: fixed;
+  text-align: center;
+  right: 0;
+}
+nav:hover{
+  background-color: black;
+  border-radius: 15px;
+}
 main
 {
   padding: 2% 0;

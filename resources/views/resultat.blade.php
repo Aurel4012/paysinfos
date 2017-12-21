@@ -5,7 +5,6 @@
       <div class="container-fluid">
 
         @foreach($response as $key => $value)
-
           <div class="row text-center vertical-center">
 
            <div class="col-md-6">
@@ -48,9 +47,7 @@
               </article>
 
            </div>
-
-           {{-- <div class="col-md-6" style="background-image: url({{url('img/'.str_replace("é","e",$temps['weather'][0]['description'].'.jpg'))}})!important;"> --}}
-
+            @if (count($response) === 1)
              <div class="col-md-6 meteo">
 
               <article>
@@ -62,10 +59,10 @@
               </article>
 
              </div>
-
+             @endif
 
         </div><!--row pays et monnaie-->
-
+          @if (count($response) === 1)
          <div class="row text-center">
 
           <div class="col-md-12 monnaie">
@@ -80,33 +77,7 @@
            </div>
 
           </div>
-
-          <div class="row text-center vertical-center">
-
-            <div class="col-md-10 text-center other-search">
-
-              <h2>Une autre recherche ?</h2>
-
-              <form method="POST" action="{{url('/result')}}">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                
-
-                <select name="tag" class="mdb-select mx-auto mt-3">
-                    <option value="name">Pays</option>
-                    <option value="capital">Capitale</option>
-                    <option value="region">Région</option>
-                </select>
-                    
-
-                <input placeholder="Recherche en Anglais" name="search" type="text" class="mx-auto">
-
-                <button class="btn btn-success mt-5" type="submit">Recherchez</button>
-              </form>
-
-            </div>
-
-        </div><!--ROW-->
-
+          @endif
       </div><!--container-fluid-->
 
   @endforeach

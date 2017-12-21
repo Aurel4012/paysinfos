@@ -13,6 +13,7 @@
         <link rel="stylesheet" type="text/css" href="{{asset('css/resultat.css')}}">
     </head>
     <body class="animated fadeIn">
+        @include('header')
         @section('sidebar')
         @show
 
