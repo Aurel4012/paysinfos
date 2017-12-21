@@ -22,10 +22,18 @@ nav{
   position: fixed;
   text-align: center;
   right: 0;
+  transition: all ease-in-out .3s;
+  z-index: 999;
 }
+
+nav input
+{
+  color: #fff;
+  width: 80%!important;
+}
+
 nav:hover{
   background-color: black;
-  border-radius: 15px;
 }
 main
 {
@@ -98,6 +106,32 @@ article span
   .meteo article
   {
     margin: 5% 0;
+  }
+
+  nav
+  {
+    background: #000;
+  }
+
+  nav:hover
+  {
+    border-radius: 0;
+  }
+
+  nav h2
+  {
+    font-size: 1.2rem;
+  }
+
+  nav input, nav select, nav button
+  {
+    font-size: 0.7rem!important;
+  }
+
+  nav .btn
+  {
+    padding: 2%;
+    margin-top: 1.2rem;
   }
 
 }
